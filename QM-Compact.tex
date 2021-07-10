@@ -1,0 +1,84 @@
+\documentclass[10pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{braket}
+
+\title{Quantum Mechanics}
+\author{Stefan Aeschbacher}
+\date{\today}
+
+\newtheorem{post}{Postulate}
+
+\DeclareMathOperator {\opH} {\hat{H}}
+\DeclareMathOperator {\opA} {\hat{A}}
+\DeclareMathOperator {\opB} {\hat{B}}
+\DeclareMathOperator {\opC} {\hat{C}}
+
+\begin{document}
+
+    \maketitle
+
+
+    \chapter{Postulates}
+    \section{Postulate 1: state}
+    
+    \begin{post}
+    The state of a physical system is described by a state vector that belongs to a complex vector space V, called the state space of the system.
+    \end{post}
+    
+    \chapter{State space}
+    \begin{align}
+    \ket{ \psi_1} + \ket{ \psi_2} &= \ket{ \psi_3} \\
+    \ket{ \psi_1} + \ket{ \psi_2} &= \ket{ \psi_2} + \ket{ \psi_1}
+    \end{align}
+    \chapter{Operators}
+    An operator acting on a ket creates a new ket:
+    \begin{align}
+    \opA \ket{\psi} = \ket{\psi'} \\
+    \ket{\psi}, \ket{\psi'} \in V
+    \end{align}
+    Operators are linear
+    \begin{align}
+    \opA (a_1\ket{\psi_1} + a_2\ket{\psi_2}) = (a_1\opA\ket{\psi_1} + a_2\opA\ket{\psi_2}) \\
+    \ket{\psi}, \ket{\psi'} \in V; a_1, a_2 \in \mathbb{C}
+    \end{align}
+    Operators are associative and commutative under addition
+    \begin{align}
+    \opA + (\opB + \opC) = (\opA + \opB) + \opC \\
+    \opA + \opB = \opB + \opA 
+    \end{align}
+    Multiplying operators is interpreted as applying them to kets. It is associative but NOT (in general) commutative.
+    \begin{align}
+    \opA\opB\ket{\psi} = \opA(\opB\ket{\psi}) = \opA\ket{\psi'} \\
+    \opA(\opB\opC) = (\opA\opB)\opC \\
+    \opA\opB \ne \opB\opA
+    \end{align}
+    The lack of commutativeness makes the "commutator" useful
+    \begin{align}
+    [\opA, \opB] = \opA\opB - \opB\opA \\
+    \end{align}    
+    \section{Projection Operators}
+    A projection operator is defined
+    \begin{align}
+    [\opA, \opB] = \opA\opB - \opB\opA \\
+    \end{align}  
+    \chapter{Eigenvectors and Eigenvalues}
+    \section{Degenerate Eigenvectors}
+    If two eigenvectors have the same eigenvalue:
+    \begin{align}
+    \opH\ket{\lambda_1} = \lambda \ket{\lambda_1} \\
+    \opH\ket{\lambda_2} = \lambda \ket{\lambda_2} 
+    \end{align}
+    their linear combination is an eigenvector as well:
+    \begin{align}
+    \alpha \opH\ket{\lambda_1} = \lambda \alpha \ket{\lambda_1} \\
+    \beta \opH\ket{\lambda_1} = \lambda \beta \ket{\lambda_1} \\
+    \opH[\alpha \ket{\lambda_1} + \beta \ket{\lambda_2}] = \lambda [\alpha \ket{\lambda_1} + \beta \ket{\lambda_2}]    
+    \end{align}
+    Therefore it is possible to create two orthogonal eigenvectors for this eigenvalue.
+    
+    The probability in the degenerate case is the sum of the probabilities for each eigenvector $| \bra{\opH} \ket{\lambda_1}|^2 + | \bra{\opH} \ket{\lambda_2}|^2$
+    
+\end{document}
