@@ -32,96 +32,96 @@
 
 \begin{document}
 
-    \maketitle
+\maketitle
 
 
-   \chapter{Dirac notation}
-    Inner product of two vectors
-       \begin{align}
-    \braket{a|b} &= \braket{b|a}^* \\
-    \braket{a|a} &\ge 0
-    \end{align}
+\chapter{Dirac notation}
+Inner product of two vectors
+\begin{align}
+	\braket{a|b} & = \braket{b|a}^* \\
+	\braket{a|a} & \ge 0
+\end{align}
 
-    \section{Postulate X: time evolution}
-    \begin{align}
-    i\hbar \frac{ \partial } { \partial t } \ket{ \Psi(t) } = \opH(t)\ket{ \Psi(t) }
-    \end{align}
+\section{Postulate X: time evolution}
+\begin{align}
+	i\hbar \frac{ \partial } { \partial t } \ket{ \Psi(t) } = \opH(t)\ket{ \Psi(t) }
+\end{align}
 
 
-    \chapter{Postulates}
-    \section{Postulate 1: state}
-    
-    \begin{post}
-    The state of a physical system is described by a state vector that belongs to a complex vector space V, called the state space of the system.
-    \end{post}
-    
-    \chapter{State space}
-    \begin{align}
-    \ket{ \Psi_1} + \ket{ \Psi_2} &= \ket{ \Psi_3} \\
-    \ket{ \Psi_1} + \ket{ \Psi_2} &= \ket{ \Psi_2} + \ket{ \Psi_1}
-    \end{align}
-    \chapter{Operators}
-    \section{Basic Properties}
-    An operator acting on a ket creates a new ket:
-    \begin{align}
-    \opA \ket{\Psi} = \ket{\Psi'} \\
-    \ket{\Psi}, \ket{\Psi'} \in V
-    \end{align}
-    Operators are linear
-    \begin{align}
-    \opA (a_1\ket{\Psi_1} + a_2\ket{\Psi_2}) = (a_1\opA\ket{\Psi_1} + a_2\opA\ket{\Psi_2}) \\
-    \ket{\Psi}, \ket{\Psi'} \in V; a_1, a_2 \in \mathbb{C}
-    \end{align}
-    Operators are associative and commutative under addition
-    \begin{align}
-    \opA + (\opB + \opC) = (\opA + \opB) + \opC \\
-    \opA + \opB = \opB + \opA 
-    \end{align}
-    Multiplying operators is interpreted as applying them to kets. It is associative but NOT (in general) commutative.
-    \begin{align}
-    \opA\opB\ket{\Psi} = \opA(\opB\ket{\Psi}) = \opA\ket{\Psi'} \\
-    \opA(\opB\opC) = (\opA\opB)\opC \\
-    \opA\opB \ne \opB\opA
-    \end{align}
-    The lack of commutativeness makes the "commutator" useful
-    \begin{align}
-    [\opA, \opB] = \opA\opB - \opB\opA \\
-    \end{align}
-    +    \section{Hermitian Operators}
+\chapter{Postulates}
+\section{Postulate 1: state}
+
+\begin{post}
+	The state of a physical system is described by a state vector that belongs to a complex vector space V, called the state space of the system.
+\end{post}
+
+\chapter{State space}
+\begin{align}
+	\ket{ \Psi_1} + \ket{ \Psi_2} & = \ket{ \Psi_3}                 \\
+	\ket{ \Psi_1} + \ket{ \Psi_2} & = \ket{ \Psi_2} + \ket{ \Psi_1}
+\end{align}
+\chapter{Operators}
+\section{Basic Properties}
+An operator acting on a ket creates a new ket:
+\begin{align}
+	\opA \ket{\Psi} = \ket{\Psi'} \\
+	\ket{\Psi}, \ket{\Psi'} \in V
+\end{align}
+Operators are linear
+\begin{align}
+	\opA (a_1\ket{\Psi_1} + a_2\ket{\Psi_2}) = (a_1\opA\ket{\Psi_1} + a_2\opA\ket{\Psi_2}) \\
+	\ket{\Psi}, \ket{\Psi'} \in V; a_1, a_2 \in \mathbb{C}
+\end{align}
+Operators are associative and commutative under addition
+\begin{align}
+	\opA + (\opB + \opC) = (\opA + \opB) + \opC \\
+	\opA + \opB = \opB + \opA
+\end{align}
+Multiplying operators is interpreted as applying them to kets. It is associative but NOT (in general) commutative.
+\begin{align}
+	\opA\opB\ket{\Psi} = \opA(\opB\ket{\Psi}) = \opA\ket{\Psi'} \\
+	\opA(\opB\opC) = (\opA\opB)\opC                             \\
+	\opA\opB \ne \opB\opA
+\end{align}
+The lack of commutativeness makes the "commutator" useful
+\begin{align}
+	[\opA, \opB] = \opA\opB - \opB\opA \\
+\end{align}
++    \section{Hermitian Operators}
 +    An operator is called Hermitian (or self-adjoint) if it is it's own conjugate $\opA = \opA^\dagger$
-+    
-    \begin{align}
-    \opA\ket{A} = \ket{B} \rightarrow \bra{A}\opA^\dagger = \bra{B} \\
-    \opA\ket{A} = \ket{B} \rightarrow \bra{A}\opA = \bra{B} \\
-    \end{align}
-    
-    A hermitian operator $\opA$ has the following properties
-    \begin{enumerate}
-    \item $\opA\ket{\lambda} = \lambda \ket{\lambda} \rightarrow \lambda \in \mathbb{R}$
-    \item $\braket{\opA} = \bra{\Psi}\opA\ket{\Psi} \in \mathbb{R}$
-    \item All eigenvectors with different eigenvalues are orthogonal
-    \end{enumerate}
++
+\begin{align}
+	\opA\ket{A} = \ket{B} \rightarrow \bra{A}\opA^\dagger = \bra{B} \\
+	\opA\ket{A} = \ket{B} \rightarrow \bra{A}\opA = \bra{B}         \\
+\end{align}
 
-    \section{Projection Operators}
-    A projection operator is defined
-    \begin{align}
-    [\opA, \opB] = \opA\opB - \opB\opA \\
-    \end{align}  
-    \chapter{Eigenvectors and Eigenvalues}
-    \section{Degenerate Eigenvectors}
-    If two eigenvectors have the same eigenvalue:
-    \begin{align}
-    \opH\ket{\lambda_1} = \lambda \ket{\lambda_1} \\
-    \opH\ket{\lambda_2} = \lambda \ket{\lambda_2} 
-    \end{align}
-    their linear combination is an eigenvector as well:
-    \begin{align}
-    \alpha \opH\ket{\lambda_1} = \lambda \alpha \ket{\lambda_1} \\
-    \beta \opH\ket{\lambda_1} = \lambda \beta \ket{\lambda_1} \\
-    \opH[\alpha \ket{\lambda_1} + \beta \ket{\lambda_2}] = \lambda [\alpha \ket{\lambda_1} + \beta \ket{\lambda_2}]    
-    \end{align}
-    Therefore it is possible to create two orthogonal eigenvectors for this eigenvalue.
-    
-    The probability in the degenerate case is the sum of the probabilities for each eigenvector $| \bra{\opH} \ket{\lambda_1}|^2 + | \bra{\opH} \ket{\lambda_2}|^2$
-    
+A hermitian operator $\opA$ has the following properties
+\begin{enumerate}
+	\item $\opA\ket{\lambda} = \lambda \ket{\lambda} \rightarrow \lambda \in \mathbb{R}$
+	\item $\braket{\opA} = \bra{\Psi}\opA\ket{\Psi} \in \mathbb{R}$
+	\item All eigenvectors with different eigenvalues are orthogonal
+\end{enumerate}
+
+\section{Projection Operators}
+A projection operator is defined
+\begin{align}
+	[\opA, \opB] = \opA\opB - \opB\opA \\
+\end{align}
+\chapter{Eigenvectors and Eigenvalues}
+\section{Degenerate Eigenvectors}
+If two eigenvectors have the same eigenvalue:
+\begin{align}
+	\opH\ket{\lambda_1} = \lambda \ket{\lambda_1} \\
+	\opH\ket{\lambda_2} = \lambda \ket{\lambda_2}
+\end{align}
+their linear combination is an eigenvector as well:
+\begin{align}
+	\alpha \opH\ket{\lambda_1} = \lambda \alpha \ket{\lambda_1} \\
+	\beta \opH\ket{\lambda_1} = \lambda \beta \ket{\lambda_1}   \\
+	\opH[\alpha \ket{\lambda_1} + \beta \ket{\lambda_2}] = \lambda [\alpha \ket{\lambda_1} + \beta \ket{\lambda_2}]
+\end{align}
+Therefore it is possible to create two orthogonal eigenvectors for this eigenvalue.
+
+The probability in the degenerate case is the sum of the probabilities for each eigenvector $| \bra{\opH} \ket{\lambda_1}|^2 + | \bra{\opH} \ket{\lambda_2}|^2$
+
 \end{document}
