@@ -36,17 +36,37 @@
 
 
 \chapter{Dirac notation}
-Inner product of two vectors
+A bra $\bra{v}$ is an element in a complex vector space. The corresponding ket $\ket{v}$ is an elemen in its dual space.
+The usual rules of linear algebra are valid:
 \begin{align}
-	\braket{a|b} & = \braket{b|a}^* \\
-	\braket{a|a} & \ge 0
+	\ket{u} + \ket{v} & = \ket{w} \\
+	c\ket{v} &= \ket{u}; c \in \mathbb{C}
 \end{align}
 
-\section{Postulate X: time evolution}
+Convert between bras and kets:
 \begin{align}
-	i\hbar \frac{ \partial } { \partial t } \ket{ \Psi(t) } = \opH(t)\ket{ \Psi(t) }
+	c_1 \ket{v_1} + c_2 \ket{v_2} \iff c_1^* \bra{v_1} + c_2^* \bra{v_2}
 \end{align}
 
+\section{Inner product}
+\begin{align}
+	\braket{u|v} & = \braket{v|u}^* \\
+	\braket{v|v} & \ge 0 \\
+	\braket{v|v} &= 0 \iff v = 0
+\end{align}
+Linearity in the second argument and antilinear in the first:
+\begin{align}
+	\braket{u|c_1 v_1 + c_2 v_2} & = c_1\braket{u|v_1} + c_2\braket{u|v_2} \\
+	\braket{c_1 u_1 + c_2 u_2|v} & = c_1^*\braket{u_1|v} + c_2^*\braket{u_2|v} \\
+\end{align}
+
+\section{Outer product}
+A bra and a ket can be combined in the outer product to create an operator
+\textbf{\begin{align}
+	X &= \ket{v}\bra{u} \\
+	X\ket{\Psi} &= \ket{v}\bra{u}\ket{\Psi} = \ket{v}\braket{u|\Psi}  \\
+\end{align}
+}
 
 \chapter{Postulates}
 \section{Postulate 1: state}
@@ -54,6 +74,13 @@ Inner product of two vectors
 \begin{post}
 	The state of a physical system is described by a state vector that belongs to a complex vector space V, called the state space of the system.
 \end{post}
+
+
+\section{Postulate X: time evolution}
+\begin{align}
+	i\hbar \frac{ \partial } { \partial t } \ket{ \Psi(t) } = \opH(t)\ket{ \Psi(t) }
+\end{align}
+
 
 \chapter{State space}
 \begin{align}
@@ -87,9 +114,9 @@ The lack of commutativeness makes the "commutator" useful
 \begin{align}
 	[\opA, \opB] = \opA\opB - \opB\opA \\
 \end{align}
-+    \section{Hermitian Operators}
-+    An operator is called Hermitian (or self-adjoint) if it is it's own conjugate $\opA = \opA^\dagger$
-+
+    \section{Hermitian Operators}
+    An operator is called Hermitian (or self-adjoint) if it is it's own conjugate $\opA = \opA^\dagger$
+
 \begin{align}
 	\opA\ket{A} = \ket{B} \rightarrow \bra{A}\opA^\dagger = \bra{B} \\
 	\opA\ket{A} = \ket{B} \rightarrow \bra{A}\opA = \bra{B}         \\
