@@ -29,6 +29,9 @@
 \DeclareMathOperator {\opB} {\hat{B}}
 \DeclareMathOperator {\opC} {\hat{C}}
 \DeclareMathOperator {\opU} {\hat{U}}
+\DeclareMathOperator {\opPos} {\hat{x}}
+\DeclareMathOperator {\opMom} {\hat{p}}
+\DeclareMathOperator {\opSigma} {\hat{\sigma}}
 
 \begin{document}
 
@@ -153,7 +156,6 @@ A hermitian operator $\opA$ has the following properties
 \section{Projection Operators}
 A projection operator is defined
 \begin{align}
-	[\opA, \opB] = \opA\opB - \opB\opA \\
 \end{align}
 \chapter{Eigenvectors and Eigenvalues}
 \section{Degenerate Eigenvectors}
@@ -172,4 +174,33 @@ Therefore it is possible to create two orthogonal eigenvectors for this eigenval
 
 The probability in the degenerate case is the sum of the probabilities for each eigenvector $| \bra{\opH} \ket{\lambda_1}|^2 + | \bra{\opH} \ket{\lambda_2}|^2$
 
+\chapter{Uncertanity}
+\section{Probabilities}
+When $\Psi$ is represented in a basis $u$
+\begin{align}
+	\opA\ket{u_n} = \lambda_n\ket{u_n}\\
+	\ket{\Psi} = \sum_{n}c_n\ket{u_n} \\
+	c_n = \braket{u_n|\Psi}
+\end{align}
+$|c_n|^2$ is the probability to get the eigenvalue $\lambda_n$ as a result.
+\section{Expectation value and RMS}
+Expectation value of $\opA$ in state $\Psi$
+\begin{align}
+	\braket{\opA}_\Psi = \bra{\Psi}\opA\ket{\Psi}
+\end{align}
+Root mean square deviation
+\begin{align}
+	\Delta \opA &= \sqrt{\braket{\opSigma_A^2}_\Psi}\\
+	\opSigma_A &= \opA - \braket{\opA}_\Psi \\
+	\Delta \opA &= \sqrt{\braket{\opA^2}_\Psi - \braket{\opA}_\Psi^2}
+\end{align}
+\section{Uncertanity Principle}
+\begin{align}
+	\Delta\opA\Delta\opB \geq \frac{1}{2}|\braket{[\opA\opB]}|
+\end{align}
+\section{Position and Momentun}
+\begin{align}
+	[\opPos,\opMom] &= i\hbar \\
+	\Delta\opPos\Delta\opMom &\geq \frac{\hbar}{2}
+\end{align}
 \end{document}
