@@ -29,6 +29,7 @@
 \DeclareMathOperator {\opB} {\hat{B}}
 \DeclareMathOperator {\opC} {\hat{C}}
 \DeclareMathOperator {\opU} {\hat{U}}
+\DeclareMathOperator {\opV} {\hat{V}}
 \DeclareMathOperator {\opPos} {\hat{x}}
 \DeclareMathOperator {\opMom} {\hat{p}}
 \DeclareMathOperator {\opSigma} {\hat{\sigma}}
@@ -36,7 +37,7 @@
 \begin{document}
 
 \maketitle
-
+\tableofcontents
 
 \chapter{Dirac notation}
 A bra $\bra{v}$ is an element in a complex vector space. The corresponding ket $\ket{v}$ is an elemen in its dual space.
@@ -138,8 +139,12 @@ The lack of commutativeness makes the "commutator" useful
 \begin{align}
 	[\opA, \opB] = \opA\opB - \opB\opA \\
 \end{align}
+The inverse $\opA^{-1}$ of an operator is defined by
+\begin{align}\label{InverseOperator}
+	\opA^{-1}\opA = \opA\opA^{-1} = \op1
+\end{align}
     \section{Hermitian Operators}
-    An operator is called Hermitian (or self-adjoint) if it is it's own conjugate $\opA = \opA^\dagger$
+    An operator is called Hermitian (or self-adjoint) if it is it's own hermitian conjugate $\opA = \opA^\dagger$
 
 \begin{align}
 	\opA\ket{A} = \ket{B} \rightarrow \bra{A}\opA^\dagger = \bra{B} \\
@@ -157,6 +162,37 @@ A hermitian operator $\opA$ has the following properties
 A projection operator is defined
 \begin{align}
 \end{align}
+
+\section{Unitary operators}
+A unitary operator is defined by
+\begin{align}
+	\opU^{-1} = \opU^\dagger
+\end{align}
+This leads to (see also \eqref{InverseOperator})
+\begin{align}
+	\opU^\dagger\opU = \opU\opU^\dagger = \op1
+\end{align}
+The product of two unitary operators ($\opU^{-1} = \opU^\dagger; \opV^{-1} = \opV^\dagger$) is as well unitary
+\begin{align}
+	(\opU\opV)^\dagger(\opU\opV) = \op1 \\
+	(\opU\opV)(\opU\opV)^\dagger = \op1
+\end{align}
+The eigenvalues of a unitary operator have magnitude 1
+\begin{align}
+	\opU\ket{\lambda} = \lambda\ket{\lambda} \Rightarrow |\lambda|^2 = 1 \\
+	|\lambda\| = 1 \Rightarrow \lambda = e^{i\phi_\lambda}; \phi_\lambda \in \mathbb{R}
+\end{align}
+The eigenvectors are orthogonal $\braket{\mu|\lambda} = 0$. 
+
+Unitary transformations conserve the scalar product of two kets and the norm of a ket.
+\begin{align}
+	\ket{\Psi_1'} = \opU \ket{\Psi_1'}&; \ket{\Psi_2'} = \opU \ket{\Psi_2'} \\
+	\braket{\Psi_1'|\Psi_2'} = \bra{\Psi_1}\opU^\dagger&\opU\ket{\Psi_1} =\braket{\Psi_1|\Psi_2} \\
+	\braket{\Psi_1'|\Psi_1'} &=\braket{\Psi_1|\Psi_1} \\
+\end{align}
+
+See also: \href{https://www.youtube.com/watch?v=baIT6HaaYuQ}{Prof.M. Unitary Operators} and \href{https://www.youtube.com/watch?v=tRWBoossG0Y&list=PL701CD168D02FF56F&index=9}{TM Lecture 4}
+
 \chapter{Eigenvectors and Eigenvalues}
 \section{Degenerate Eigenvectors}
 If two eigenvectors have the same eigenvalue:
