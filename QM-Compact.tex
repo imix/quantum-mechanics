@@ -9,7 +9,7 @@
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
+    linkcolor=black,
     filecolor=magenta,      
     urlcolor=cyan,
     pdftitle={Quantum mechanics},
@@ -29,6 +29,7 @@
 \DeclareMathOperator {\opB} {\hat{B}}
 \DeclareMathOperator {\opC} {\hat{C}}
 \DeclareMathOperator {\opU} {\hat{U}}
+\DeclareMathOperator {\opT} {\hat{T}}
 \DeclareMathOperator {\opV} {\hat{V}}
 \DeclareMathOperator {\opPos} {\hat{x}}
 \DeclareMathOperator {\opMom} {\hat{p}}
@@ -158,6 +159,11 @@ A hermitian operator $\opA$ has the following properties
 	\item All eigenvectors with different eigenvalues are orthogonal
 \end{enumerate}
 
+The Hermitian conjugate of a product is
+\begin{align}
+	(\opA\opB)^\dagger = \opB^\dagger\opA^\dagger
+\end{align}
+
 \section{Projection Operators}
 A projection operator is defined
 \begin{align}
@@ -190,6 +196,28 @@ Unitary transformations conserve the scalar product of two kets and the norm of 
 	\braket{\Psi_1'|\Psi_2'} = \bra{\Psi_1}\opU^\dagger&\opU\ket{\Psi_1} =\braket{\Psi_1|\Psi_2} \\
 	\braket{\Psi_1'|\Psi_1'} &=\braket{\Psi_1|\Psi_1} \\
 \end{align}
+
+The unitary transformation of an operator is
+\begin{align}
+	\opA' = \opU\opA\opU^\dagger
+\end{align}
+Which has the following properties
+\begin{enumerate}
+	\item if $\opA$ is Hermitain, so is $\opA'$
+	\item $(\opA')^n = (\opA^n)'$
+	\item $\opA\ket{\alpha} = \alpha\ket{\alpha} \Rightarrow \opA'\ket{\alpha'} = \alpha\ket{\alpha'} ; \ket{\alpha'} = \opU\ket{\alpha}$
+\end{enumerate}
+
+An infinitesimal unitary operator is
+\begin{align}
+	\opU(\epsilon) = \op1 - i\epsilon\opA; \epsilon \in \mathbb{R}; \opA = \opA^\dagger
+\end{align}
+A common form of unitary operators is
+\begin{align}
+	\opU = e^{i\opA}; \opA = \opA^\dagger \\
+	\text{e.g. the translation operator} \opT(\alpha) = e^{i\alpha\frac{\opMom}{\hbar}}
+\end{align}
+
 
 See also: \href{https://www.youtube.com/watch?v=baIT6HaaYuQ}{Prof.M. Unitary Operators} and \href{https://www.youtube.com/watch?v=tRWBoossG0Y&list=PL701CD168D02FF56F&index=9}{TM Lecture 4}
 
